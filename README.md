@@ -29,18 +29,6 @@ Loss: Categorical Crossentropy
 ✅ Flask web app for real-time image upload and prediction
 ✅ Easily extendable to other histopathology datasets
 
-🧩 Folder Structure
-lung_cancer_classifier/
-│
-├── static/               # Uploaded images
-├── templates/            # HTML files for Flask app
-├── final_vgg16_model_fixed.keras   # Trained model
-├── app.py                # Flask backend
-├── LungCancer_Train.ipynb # Model training notebook
-└── requirements.txt
 
-🧪 Usage
 
-Run locally:
 
-python app.py
