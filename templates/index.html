@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #333;
+        }
+        .upload-form {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            margin: 15px;
+        }
+        img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #0077cc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lung Cancer Prediction (VGG16 Model)</h1>
+    <form class="upload-form" action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if image_path %}
+        <img src="{{ image_path }}" alt="Uploaded Image">
+    {% endif %}
+
+    {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+</body>
+</html>
